@@ -6,19 +6,19 @@
 ### Make sure to create a `.env` file with following variables -
 
 ```
-DATABASE_URL=
-DIRECT_URL=
+DATABASE_URL=https://gnmwlmrnxuipnkmroczy.supabase.co
+DIRECT_URL=postgres:Mayieka1212@@db.gnmwlmrnxuipnkmroczy.supabase.co:5432/postgres
 
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_ZmxleGlibGUtYmVhci0yNS5jbGVyay5hY2NvdW50cy5kZXYk
+CLERK_SECRET_KEY=sk_test_CnaWscFsfGtMqxdtVLZAoJ69D1vCKi9m2r4utW2H8V
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
 
-GEMINI_API_KEY=
+GEMINI_API_KEY=AIzaSyDlVECPJorc88SOcDwxNpHjwX39lUsJ3Ho
 
-RESEND_API_KEY=
+RESEND_API_KEY=re_9ibvEJ6u_6hTgmS8BwxRU4P4MPNTYy5v8
 
-ARCJET_KEY=
+ARCJET_KEY=ajkey_01jtfpg772f659rkctg6y32k61
 ```
