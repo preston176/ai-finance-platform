@@ -10,11 +10,11 @@ import {
 // Stats Data
 export const statsData = [
   {
-    value: "50K+",
+    value: "5K+",
     label: "Active Users",
   },
   {
-    value: "$2B+",
+    value: "100,000+",
     label: "Transactions Tracked",
   },
   {
@@ -35,12 +35,12 @@ export const featuresData = [
     description:
       "Get detailed insights into your spending patterns with AI-powered analytics",
   },
-  {
-    icon: <Receipt className="h-8 w-8 text-blue-600" />,
-    title: "Smart Receipt Scanner",
-    description:
-      "Extract data automatically from receipts using advanced AI technology",
-  },
+  // {
+  //   icon: <Receipt className="h-8 w-8 text-blue-600" />,
+  //   title: "Smart Receipt Scanner",
+  //   description:
+  //     "Extract data automatically from receipts using advanced AI technology",
+  // },
   {
     icon: <PieChart className="h-8 w-8 text-blue-600" />,
     title: "Budget Planning",
@@ -51,11 +51,11 @@ export const featuresData = [
     title: "Multi-Account Support",
     description: "Manage multiple accounts and credit cards in one place",
   },
-  {
-    icon: <Globe className="h-8 w-8 text-blue-600" />,
-    title: "Multi-Currency",
-    description: "Support for multiple currencies with real-time conversion",
-  },
+  // {
+  //   icon: <Globe className="h-8 w-8 text-blue-600" />,
+  //   title: "Multi-Currency",
+  //   description: "Support for multiple currencies with real-time conversion",
+  // },
   {
     icon: <Zap className="h-8 w-8 text-blue-600" />,
     title: "Automated Insights",

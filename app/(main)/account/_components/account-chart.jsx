@@ -117,7 +117,7 @@ export function AccountChart({ transactions }) {
                   : "text-red-500"
               }`}
             >
-              ${(totals.income - totals.expense).toFixed(2)}
+              Kes {(totals.income - totals.expense).toFixed(2)}
             </p>
           </div>
         </div>

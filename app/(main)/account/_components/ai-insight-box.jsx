@@ -4,6 +4,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { GoogleGenAI } from '@google/genai';
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
+
 
 const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
@@ -20,7 +24,16 @@ export function AIInsightBox({ transactions }) {
       // Generate content using GoogleGenAI
       const response = await ai.models.generateContent({
         model: 'gemini-2.0-flash-001',
-        contents: `Based on these transactions: ${JSON.stringify(transactions)}, give a summary of how I am spending the funds.`,
+        contents: `Based on these transactions: ${JSON.stringify(transactions)}, give a summary of how I am spending the funds. Also predict my spending for the next month based on these transactions. Also give recommendations on what I need to reduce.
+        
+      Use this structure:
+      1. Summary of spending
+      2. Prediction for next month
+      3. Recommendations for reducing spending  
+
+      If it is hard to predict, say so. If there are no transactions, say so.
+      If there are no recommendations, say so. If there are no predictions, say so. If there is no summary, say so. If there is no spending, say so. If there is no spending pattern, say so. If there is no spending trend, say so. If there is no spending history, say so. If there is no spending data, say so. If there is no spending information, say so. If there is no spending analysis, say so. If there is no spending report, say so.
+        `,
       });
 
       // Set the insight result
@@ -49,7 +62,7 @@ export function AIInsightBox({ transactions }) {
 
         {insight && (
           <div className="mt-4 bg-background p-4 border rounded-lg text-sm">
-            {insight}
+          <Markdown remarkPlugins={[remarkGfm]}>{String(insight)}</Markdown>
           </div>
         )}
       </CardContent>

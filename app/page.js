@@ -72,7 +72,7 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20">
+      {/* <section id="testimonials" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">
             What Our Users Say
@@ -102,7 +102,7 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-blue-600">
@@ -119,7 +119,7 @@ const LandingPage = () => {
               size="lg"
               className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce"
             >
-              Start Free Trial
+              Get Started
             </Button>
           </Link>
         </div>
