@@ -99,13 +99,13 @@ export function AccountChart({ transactions }) {
           <div className="text-center">
             <p className="text-muted-foreground">Total Income</p>
             <p className="text-lg font-bold text-green-500">
-              ${totals.income.toFixed(2)}
+              Kes {totals.income.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
             <p className="text-muted-foreground">Total Expenses</p>
             <p className="text-lg font-bold text-red-500">
-              ${totals.expense.toFixed(2)}
+              Kes {totals.expense.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
