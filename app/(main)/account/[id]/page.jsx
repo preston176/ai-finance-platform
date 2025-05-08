@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { getAccountWithTransactions } from "@/actions/account";
 import { BarLoader } from "react-spinners";
-import { TransactionTable } from "../_components/transaction-table";
 import { notFound } from "next/navigation";
 import { AccountChart } from "../_components/account-chart";
-import { AIInsightBox } from "../_components/ai-insight-box"; // 👈 import your new AI insight component
+import { AIInsightBox } from "../_components/ai-insight-box";
+import { TransactionTableWithPdf } from "../_components/TransactionsWithPdf";
 
 export default async function AccountPage({ params }) {
   const accountData = await getAccountWithTransactions(params.id);
@@ -23,14 +23,13 @@ export default async function AccountPage({ params }) {
             {account.name}
           </h1>
           <p className="text-muted-foreground">
-            {account.type.charAt(0) + account.type.slice(1).toLowerCase()}{" "}
-            Account
+            {account.type.charAt(0) + account.type.slice(1).toLowerCase()} Account
           </p>
         </div>
 
         <div className="text-right pb-2">
           <div className="text-xl sm:text-2xl font-bold">
-            ${parseFloat(account.balance).toFixed(2)}
+            Kes {parseFloat(account.balance).toFixed(2)}
           </div>
           <p className="text-sm text-muted-foreground">
             {account._count.transactions} Transactions
@@ -38,18 +37,14 @@ export default async function AccountPage({ params }) {
         </div>
       </div>
 
-      {/* AI Insights */}
       <AIInsightBox transactions={transactions} />
 
-      {/* Chart Section */}
       <Suspense fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}>
         <AccountChart transactions={transactions} />
       </Suspense>
 
-      {/* Transactions Table */}
-      <Suspense fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}>
-        <TransactionTable transactions={transactions} />
-      </Suspense>
+      {/* PDF-enabled Table */}
+      <TransactionTableWithPdf transactions={transactions} />
     </div>
   );
 }
